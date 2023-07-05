@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-ios</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <SupportedOSPlatformVersion>11.2</SupportedOSPlatformVersion>
+    <ImplicitUsings>true</ImplicitUsings>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.1.303" />
+    <PackageReference Include="MonoGame.Framework.iOS" Version="3.8.1.303" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameLibrary\GameLibrary.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="..\GameLibrary\Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Content\monkey.xnb" />
+    <None Remove="Content\background.xnb" />
+    <None Remove="Content\font.xnb" />
+    <None Remove="Content\hit.xnb" />
+    <None Remove="Content\logo.xnb" />
+    <None Remove="Content\title.m4a" />
+    <None Remove="Content\title.xnb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\monkey.xnb" />
+    <Content Include="Content\background.xnb" />
+    <Content Include="Content\font.xnb" />
+    <Content Include="Content\hit.xnb" />
+    <Content Include="Content\logo.xnb" />
+    <Content Include="Content\title.m4a" />
+    <Content Include="Content\title.xnb" />
+  </ItemGroup>
+  <Target Name="RestoreDotnetTools" BeforeTargets="Restore">
+    <Message Text="Restoring dotnet tools" Importance="High" />
+    <Exec Command="dotnet tool restore" />
+  </Target>
+</Project>

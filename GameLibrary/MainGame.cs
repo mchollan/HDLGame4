@@ -119,11 +119,11 @@ namespace GameLibrary
             // Exit() is obsolete on iOS
             if(_platform == Models.Platforms.Platform.iOS || _platform == Models.Platforms.Platform.Android)
             {
-                if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
-                Keyboard.GetState().IsKeyDown(Keys.Escape))
-                {
-                    Exit();
-                }
+                //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
+                //Keyboard.GetState().IsKeyDown(Keys.Escape))
+               // {
+               //     Exit();
+               // }
             }
 
             // Custom logic from us
