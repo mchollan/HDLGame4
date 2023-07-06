@@ -14,8 +14,7 @@
 	<string>11.2</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>iOSGame</string>
@@ -29,6 +28,10 @@
 	<array>
 		<integer>1</integer>
 		<integer>2</integer>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 </dict>
 </plist>
