@@ -15,7 +15,7 @@ namespace GameLibrary
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        private Models.Platforms.Platform? _platform;
+        private MonoGame.Framework.Utilities.MonoGamePlatform? _platform;
 
         private Character _hero;
 
@@ -61,7 +61,8 @@ namespace GameLibrary
 
             _platform = Models.Platforms.DeterminePlatform();
 
-            if(_platform == Models.Platforms.Platform.WindowsDesktop) 
+            if(_platform == MonoGame.Framework.Utilities.MonoGamePlatform.DesktopGL ||
+               _platform == MonoGame.Framework.Utilities.MonoGamePlatform.Windows) 
             {
                 _graphics.PreferredBackBufferWidth = 600;
                 _graphics.PreferredBackBufferHeight = 800;
@@ -117,7 +118,7 @@ namespace GameLibrary
         {
             // For mobile, this logic will close the Game when the Back button is pressed
             // Exit() is obsolete on iOS
-            if(_platform == Models.Platforms.Platform.iOS || _platform == Models.Platforms.Platform.Android)
+            if(_platform == MonoGame.Framework.Utilities.MonoGamePlatform.iOS || _platform == MonoGame.Framework.Utilities.MonoGamePlatform.Android)
             {
                 //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 //Keyboard.GetState().IsKeyDown(Keys.Escape))
